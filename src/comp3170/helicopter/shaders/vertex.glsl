@@ -1,0 +1,12 @@
+#version 410
+
+in vec2 a_position;	
+
+uniform mat4 u_worldMatrix;
+
+void main() {
+	vec4 position = vec4(a_position, 0, 1);
+	position = u_worldMatrix * position;
+    gl_Position = position;
+}
+
